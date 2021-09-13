@@ -1,0 +1,32 @@
+# Network HostVar Creator
+
+Example Ansible playbook to parse brownfield network devices and return Infrastructure as Code (IaC). This allows network teams to take their existing configurations (BGP, VLANs, etc) and store them as variables. With this approach we are now able to use [Network Resource Modules](https://docs.ansible.com/ansible/latest/network/user_guide/network_resource_modules.html) to perform declarative configurations on our devices and use our variable as our source of truth.
+
+## Usage
+
+This is intended to be used for demonstration purposes or for initial parsing of a devices current state. Once this baseline is established the goal is to start using the "bgp_config" variable that is created in host_vars/{{  device }}.yml to make changes to the devices BGP state.
+
+## Example Output
+
+Hostvar file created under host_vars/{{ device }}.yml
+
+``
+
+### BGP
+
+bgp_config: |
+router bgp 64512
+neighbor 10.0.1.1 remote-as 64513
+neighbor 10.0.1.1 description Leaf1
+neighbor 10.0.1.1 maximum-routes 12000
+neighbor 10.0.1.3 remote-as 64513
+neighbor 10.0.1.3 description Leaf2
+neighbor 10.0.1.3 maximum-routes 12000
+neighbor 10.0.1.5 remote-as 64514
+neighbor 10.0.1.5 description Leaf3
+neighbor 10.0.1.5 maximum-routes 12000
+network 10.0.0.0/24
+network 10.0.1.0/24
+network 10.0.2.0/24
+router-id 10.0.250.1
+``
