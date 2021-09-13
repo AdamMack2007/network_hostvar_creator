@@ -26,6 +26,7 @@
 
     - name: Push data to hostvars
       lineinfile:
+        create: yes
         line: "{{ lookup('template','bgp.j2') }}"
         path: "{{playbook_dir}}/host_vars/{{inventory_hostname}}.yml"
       when: bgp_config is not defined
