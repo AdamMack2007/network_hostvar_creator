@@ -11,22 +11,21 @@ This is intended to be used for demonstration purposes or for initial parsing of
 Hostvar file created under host_vars/{{ device }}.yml
 
 ```yaml
-
 ### BGP
 
 bgp_config: |
-router bgp 64512
-neighbor 10.0.1.1 remote-as 64513
-neighbor 10.0.1.1 description Leaf1
-neighbor 10.0.1.1 maximum-routes 12000
-neighbor 10.0.1.3 remote-as 64513
-neighbor 10.0.1.3 description Leaf2
-neighbor 10.0.1.3 maximum-routes 12000
-neighbor 10.0.1.5 remote-as 64514
-neighbor 10.0.1.5 description Leaf3
-neighbor 10.0.1.5 maximum-routes 12000
-network 10.0.0.0/24
-network 10.0.1.0/24
-network 10.0.2.0/24
-router-id 10.0.250.1
+  router bgp 64512
+   neighbor 10.0.1.1 remote-as 64513
+   neighbor 10.0.1.1 description Leaf1
+   neighbor 10.0.1.1 maximum-routes 12000
+   neighbor 10.0.1.3 remote-as 64513
+   neighbor 10.0.1.3 description Leaf2
+   neighbor 10.0.1.3 maximum-routes 12000
+   neighbor 10.0.1.5 remote-as 64514
+   neighbor 10.0.1.5 description Leaf3
+   neighbor 10.0.1.5 maximum-routes 12000
+   network 10.0.0.0/24
+   network 10.0.1.0/24
+   network 10.0.2.0/24
+   router-id 10.0.250.1
 ```
