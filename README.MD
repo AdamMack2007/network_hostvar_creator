@@ -10,7 +10,7 @@ The only configuration this parses is BGP but there are resource modules for VLA
 
 The best part about the resource modules? By changing the modules from "arista.eos.eos_bgp_global" to something like "cisco.nxos.nxos_bgp_global" or "junipernetworks.junos.junos_bgp_global" we can take the same approach with managing multiple platforms. 
 
-![https://i.pinimg.com/originals/ca/cf/9f/cacf9f86392afeac7d83fdd2291b53af.jpg]
+<img src="https://i.pinimg.com/originals/ca/cf/9f/cacf9f86392afeac7d83fdd2291b53af.jpg" width="300" height="300">
 
 
 
