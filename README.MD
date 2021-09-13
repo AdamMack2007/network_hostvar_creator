@@ -6,6 +6,14 @@ Example Ansible playbook to parse brownfield network devices and return Infrastr
 
 This is intended to be used for demonstration purposes or for initial parsing of a devices current state. Once this baseline is established the goal is to start using the "bgp_config" variable that is created in host_vars/{{  device }}.yml to make changes to the devices BGP state.
 
+The only configuration this parses is BGP but there are resource modules for VLANs, interfaces, OSPF, logging and many others that we can take this approach with. 
+
+The best part about the resource modules? By changing the modules from "arista.eos.eos_bgp_global" to something like "cisco.nxos.nxos_bgp_global" or "junipernetworks.junos.junos_bgp_global" we can take the same approach with managing multiple platforms. 
+
+![https://i.pinimg.com/originals/ca/cf/9f/cacf9f86392afeac7d83fdd2291b53af.jpg]
+
+
+
 ## Example Output
 
 Hostvar file created under host_vars/{{ device }}.yml
