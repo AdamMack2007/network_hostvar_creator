@@ -31,10 +31,12 @@
         path: "{{playbook_dir}}/host_vars/{{inventory_hostname}}.yml"
       when: bgp_config is not defined
 
+    # Below are example tasks for parsing the bgp_config hostvar we create and then use that to configure the device
+
     - name: Parse BGP
       arista.eos.eos_bgp_global:
         state: parsed
-        running_config: "{{ bgp_config }}"
+        running_config: "{{ bgp_config }}" #Found in host_vars/{{device}}.yml
       register: eos_bgp
 
     - name: Configure BGP
